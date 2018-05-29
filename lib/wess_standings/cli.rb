@@ -2,6 +2,7 @@ class WessStandings::CLI
 
 	def call
 		greeting
+		generate_list
 		display_list
 		user_input
 		selection
@@ -12,8 +13,11 @@ class WessStandings::CLI
 		puts "This program will display details of future races, \nand results of previous races."
 	end
 
-	def race_list
+	def generate_list
 		WessStandings::Schedule.races
+	end
+
+	def race_list
 		@race_list = WessStandings::Schedule.all
 		@race_list
 	end
