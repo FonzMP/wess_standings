@@ -34,7 +34,8 @@ class WessStandings::CLI
 	end
 
 	def user_input
-		puts "\nType 'list' to see the list of races, or"
+		puts "\nType 'list' to see the list of races,"
+		puts "type 'results' to view results, or"
 		puts "type 'exit' to leave the program"
 		puts "\nPlease select a race number from above: "
 		@user_input = gets.strip.downcase
@@ -51,6 +52,8 @@ class WessStandings::CLI
 			exit
 		elsif @user_input == "list"
 			full_rotation
+		elsif @user_input == "results"
+			WessStandings::Results.new.call
 		else
 			puts "That's not a valid choice!"
 			user_input
