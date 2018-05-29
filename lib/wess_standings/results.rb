@@ -43,11 +43,15 @@ class WessStandings::Results
 		@user_input = gets.strip.downcase
 	end
 
+
+
+
+	##### you are here, working on selection
+
 	def selection
 		if @user_input.to_i <= @race_list.length && @user_input.to_i > 0
 			race = @race_list[@user_input.to_i - 1]
-			puts "The #{race.name} is set to be held in #{race.location} on #{race.date}."
-			WessStandings::Schedule.about("#{race.url}")
+			WessStandings::Results.race_results("#{race.results}")
 			full_rotation
 		elsif @user_input == "exit"
 			puts "Thanks for hanging with us!"
@@ -75,9 +79,22 @@ class WessStandings::Results
 	end
 
 	def self.race_results(profile_url)
+		@race_results = []
 		doc = Nokogiri::HTML(open(profile_url))
-		doc.css('.event-results-table').css('td').each do |list|
-			puts list.text.strip
+		doc.css('.event-results-table').css('tr').each do |row|
+			rider = WessStandings::Rider.new
+			rider.last_name = row.css('td')[0].text.strip
+			rider.first_name = row.css('td')[1].text.strip
+			rider.manufacturer = row.css('td')[3].text.strip
+			rider.points = row.css('td')[4].text.strip
+			@race_results << rider
+		end
+		@race_results
+	end
+
+	def display_race_results
+		@race_results.each_with_index do |rider, i|
+			puts "#{i + 1}. " + rider.first_name + " " + rider.last_name + " - " + rider.manufacturer + " - " + rider.points
 		end
 	end
 
