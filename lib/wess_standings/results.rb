@@ -52,6 +52,7 @@ class WessStandings::Results
 		if @user_input.to_i <= @race_list.length && @user_input.to_i > 0
 			race = @race_list[@user_input.to_i - 1]
 			WessStandings::Results.race_results("#{race.results}")
+			WessStandings::Results.display_race_results
 			full_rotation
 		elsif @user_input == "exit"
 			puts "Thanks for hanging with us!"
@@ -92,7 +93,7 @@ class WessStandings::Results
 		@race_results
 	end
 
-	def display_race_results
+	def self.display_race_results
 		@race_results.each_with_index do |rider, i|
 			puts "#{i + 1}. " + rider.first_name + " " + rider.last_name + " - " + rider.manufacturer + " - " + rider.points
 		end
