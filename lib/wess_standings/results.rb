@@ -8,6 +8,11 @@ class WessStandings::Results
 		full_rotation
 	end
 
+	def recall
+		greeting
+		full_rotation
+	end
+
 	def greeting
 		puts "Below are the current season races that have been completed."
 		puts "Please select a race from below to see the results."
@@ -60,7 +65,7 @@ class WessStandings::Results
 		elsif @user_input == "list"
 			full_rotation
 		elsif @user_input == "results"
-			WessStandings::Results.new.call
+			WessStandings::Results.new.recall
 		else
 			puts "That's not a valid choice!"
 			user_input
