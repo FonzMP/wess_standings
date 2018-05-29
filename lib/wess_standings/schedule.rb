@@ -19,6 +19,11 @@ class WessStandings::Schedule
 		end
 	end
 
+	def self.about(profile_url)
+		doc = Nokogiri::HTML(open(profile_url))
+		puts doc.css('.entry').css('p').first.text
+	end
+
 	def self.all
 		@@all
 	end
