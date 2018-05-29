@@ -10,7 +10,7 @@ class WessStandings::CLI
 
 	def greeting
 		puts "Welcome to WESS Standings results for 2018."
-		puts "This program will display details of future races, \nand results of previous races."
+		puts "This program will display details of future races, \nand results of previous races.\n \n"
 	end
 
 	def generate_list
