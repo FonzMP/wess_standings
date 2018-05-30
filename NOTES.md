@@ -24,10 +24,21 @@
 		"To view more information, select a race number from above:"
 
 
-	Second Window (Results). #Show top ten or full? - Give option?
+	Second Window - Schedule View
+		"Scrape from Race Details Page - First Paragraph only"
 
-		"The #{race.name} was ran on #{race.date}."
-		"The #{race.results} are shown below"
+
+
+
+	Results List Window (Results List). 
+
+			1. Race Name
+			2. Race Name
+			3. Race Name
+
+
+	Second Window - Race Results (Race Results) - #Show top ten or full? - Give option?
+
 			1. Rider 1 - Manufacturer - Points
 			2. Rider 2 - Manufacturer - Points
 			3. Rider 3 - Manufacturer - Points
@@ -35,8 +46,3 @@
 			5. Rider 5 - Manufacturer - Points
 			6. Rider 6 - Manufacturer - Points
 
-
-	Second Window (Race Details)
-		"Scrape from Race Details Page - First Paragraph only"
-
-		----- revert back to list? ------
