@@ -1,12 +1,6 @@
 # WESS Standings for current Season
 
 - Will scrape https://iridewess.com/events/ to get race list, and then list details, or results from each race.
-	1. Previous races results
-		a. Previous Results will be displayed if the race is completed.
-	2. Future races name / date / time / location
-
-
-
 
 - Challenges / additional thoughts
 	- How to make this fail proof for future?
@@ -15,22 +9,22 @@
 
 - Mock Build Up
 
-	First Window
+	First Window - Schedule View
 
 		"Welcome to WESS Standings results for #{year}."
-		"The current years races are shown below."
-		"Please select a race to a. View Details or b. View Results."
+		"Your season schedule, race description and results page for the 2018 season."
+		
 
 			"1. Race 1"
 			"2. Race 2"
 			"3. Race 3"
 			"4. Race 4"
-			"5. Race 5"
-			"6. Race 6"
 			etc
 
+		"To view more information, select a race number from above:"
 
-	Second Window (Results). #Show top ten or full? - Give option? Full is 50
+
+	Second Window (Results). #Show top ten or full? - Give option?
 
 		"The #{race.name} was ran on #{race.date}."
 		"The #{race.results} are shown below"
@@ -43,7 +37,6 @@
 
 
 	Second Window (Race Details)
-		"The #{race.name} is set to be ran on #{race.date}."
-		"Please check back for results after that date!"
+		"Scrape from Race Details Page - First Paragraph only"
 
 		----- revert back to list? ------
