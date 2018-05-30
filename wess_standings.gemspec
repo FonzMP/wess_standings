@@ -9,19 +9,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["="]
   spec.email         = ["fonzmp@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "A schedule and results program for WESS motorcycle championships in 2018."
+  spec.description   = "This application serves as a general purpose race schedule, race description, and race results application for the 2018 World Enduro Super Series (WESS) motorcycle championships. With an early start in the season, there's a lot of excitement still to come."
+  spec.homepage      = "https://github.com/FonzMP/wess_standings.git"
   spec.license       = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -34,7 +25,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "pry"
 
   spec.add_dependency "nokogiri"
 end
