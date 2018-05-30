@@ -6,7 +6,7 @@ require "wess_standings/version"
 Gem::Specification.new do |spec|
   spec.name          = "wess_standings"
   spec.version       = WessStandings::VERSION
-  spec.authors       = ["="]
+  spec.authors       = ["Alex Wilson"]
   spec.email         = ["fonzmp@gmail.com"]
 
   spec.summary       = "A schedule and results program for WESS motorcycle championships in 2018."
