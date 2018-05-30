@@ -1,8 +1,8 @@
 # WessStandings
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/wess_standings`. To experiment with that code, run `bin/console` for an interactive prompt.
+## About
 
-TODO: Delete this and the text above, and describe your gem
+This application serves as a general purpose race schedule, race description, and race results application for the 2018 World Enduro Super Series (WESS) motorcycle championships. With an early start in the season, there's a lot of excitement still to come.
 
 ## Installation
 
@@ -22,7 +22,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To access the season schedule, input 'schedule' when prompted.
+Within the schedule mode, you'll be able to select from a list of races. By selecting a race number, you'll be able to view a brief description of the race directly from it's website.
+
+To access the results page, input 'results' when prompted.
+Within the results mode, you'll be able to select from a list of races. By selecting a race number, you'll be displayed the 'short' version of the results showing the top 50 riders from that race. You can type 'short' to see this list, or type 'full' to see the full results of the race.
+
+To exit the program, input 'exit' when prompted.
 
 ## Development
 
