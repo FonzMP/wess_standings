@@ -14,11 +14,6 @@ class WessStandings::CLI
 		full_rotation
 	end
 
-	def greeting
-		puts "Welcome to WESS Standings results for 2018."
-		puts "This program will provide a season schedule, \nand provide a brief description of each race."
-	end
-
 	def race_list
 		@race_list = WessStandings::Schedule.all
 		@race_list
@@ -39,7 +34,7 @@ class WessStandings::CLI
 		elsif @user_input == "exit"
 			puts "Thanks for hanging with us!"
 			exit
-		elsif @user_input == "list"
+		elsif @user_input == "schedule"
 			full_rotation
 		elsif @user_input == "results"
 			WessStandings::Results.new.call

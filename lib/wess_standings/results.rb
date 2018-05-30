@@ -7,12 +7,7 @@ class WessStandings::Results
 
 	def call
 		greeting
-		full_rotation_after_load
-	end
-
-	def greeting
-		puts "Below are the current season races that have been completed."
-		puts "Please select a race from below to see the results."
+		full_rotation
 	end
 
 	def generate_list
@@ -31,7 +26,7 @@ class WessStandings::Results
 	end
 
 	def user_input_after_results_load
-		puts "\nType 'list' to see the schedule for 2018,"
+		puts "\nType 'schedule' to see the schedule for 2018,"
 		puts "type 'results' to go in to the results mode, or"
 		puts "type 'full' to see the full results list,"
 		puts "type 'short' to see the short results list (default), "
@@ -55,7 +50,7 @@ class WessStandings::Results
 		elsif @user_input == "exit"
 			puts "Thanks for hanging with us!"
 			exit
-		elsif @user_input == "list"
+		elsif @user_input == "schedule"
 			WessStandings::CLI.new.recall
 		elsif @user_input == "results"
 			WessStandings::Results.new.call

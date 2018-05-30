@@ -13,11 +13,16 @@ module Memorable
 		end
 
 		def user_input
-			puts "\nType 'list' to see the race schedule for 2018,"
+			puts "\nType 'schedule' to see the race schedule and view a brief description of the 2018 races,"
 			puts "type 'results' to go in to the results mode, or"
 			puts "type 'exit' to leave the program"
-			puts "\nPlease select a race number from above: "
+			puts "\nTo view more information, select a race number from above: "
 			@user_input = gets.strip.downcase
+		end
+
+		def greeting
+			puts "Welcome to WESS Standings results for 2018."
+			puts "Your season schedule, race description and results page for the 2018 season."
 		end
 
 	end
