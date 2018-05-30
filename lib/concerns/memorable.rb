@@ -1,9 +1,5 @@
 module Memorable
 
-	module ClassMethods
-
-	end
-
 	module InstanceMethods
 
 		def full_rotation
