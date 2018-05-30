@@ -6,6 +6,11 @@ class WessStandings::CLI
 		full_rotation
 	end
 
+	def recall
+		greeting
+		full_rotation
+	end
+
 	def greeting
 		puts "Welcome to WESS Standings results for 2018."
 		puts "This program will provide a season schedule, \nand provide a brief description of each race."
@@ -34,8 +39,8 @@ class WessStandings::CLI
 	end
 
 	def user_input
-		puts "\nType 'list' to see the list of races,"
-		puts "type 'results' to view results, or"
+		puts "\nType 'list' to see the race schedule for 2018,"
+		puts "type 'results' to go in to the results mode, or"
 		puts "type 'exit' to leave the program"
 		puts "\nPlease select a race number from above: "
 		@user_input = gets.strip.downcase

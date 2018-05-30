@@ -10,7 +10,7 @@ class WessStandings::Results
 
 	def recall
 		greeting
-		full_rotation
+		full_rotation_after_load
 	end
 
 	def greeting
@@ -33,6 +33,21 @@ class WessStandings::Results
 		selection
 	end
 
+	def full_rotation_after_load
+		display_list
+		user_input_after_results_load
+		selection
+	end
+
+	def user_input_after_results_load
+		puts "\nType 'list' to see the schedule for 2018,"
+		puts "type 'results' to go in to the results mode, or"
+		puts "type 'full' to see the full results list,"
+		puts "type 'short' to see the short results list (default), "
+		puts "type 'exit' to leave the program"
+		@user_input = gets.strip.downcase
+	end
+
 	def display_list
 		puts " "
 		results_list.each_with_index do |item, i|
@@ -41,8 +56,10 @@ class WessStandings::Results
 	end
 
 	def user_input
-		puts "\nType 'list' to see the list of races,"
-		puts "type 'results' to view results, or"
+		puts "\nType 'list' to see the schedule for 2018,"
+		puts "type 'results' to go in to the results mode, or"
+		# puts "type 'full' to see the full results list,"
+		# puts "type 'short' to see the short results list (default), "
 		puts "type 'exit' to leave the program"
 		puts "\nPlease select a race number from above: "
 		@user_input = gets.strip.downcase
@@ -58,14 +75,20 @@ class WessStandings::Results
 			race = @race_list[@user_input.to_i - 1]
 			WessStandings::Results.race_results("#{race.results}")
 			WessStandings::Results.display_race_results
-			full_rotation
+			full_rotation_after_load
 		elsif @user_input == "exit"
 			puts "Thanks for hanging with us!"
 			exit
 		elsif @user_input == "list"
-			full_rotation
+			WessStandings::CLI.new.recall
 		elsif @user_input == "results"
 			WessStandings::Results.new.recall
+		elsif @user_input == "full"
+			WessStandings::Results.display_race_results_all
+			full_rotation_after_load
+		elsif @user_input == "short"
+			WessStandings::Results.display_race_results
+			full_rotation_after_load
 		else
 			puts "That's not a valid choice!"
 			user_input
@@ -103,6 +126,19 @@ class WessStandings::Results
 	end
 
 	def self.display_race_results
+		counter = 1
+		@race_results.each_with_index do |rider, i|
+			if counter <= 50
+				puts "#{counter}. " + rider.first_name + " " + rider.last_name + " - " + rider.manufacturer + " - " + rider.points
+				counter += 1
+			else
+				puts "......"
+				break
+			end
+		end
+	end
+
+	def self.display_race_results_all
 		@race_results.each_with_index do |rider, i|
 			puts "#{i + 1}. " + rider.first_name + " " + rider.last_name + " - " + rider.manufacturer + " - " + rider.points
 		end
