@@ -13,8 +13,8 @@ module Memorable
 		end
 
 		def user_input
-			puts "\nType 'schedule' to see the race schedule and view a brief description of the 2018 races,"
-			puts "type 'results' to go in to the results mode, or"
+			puts "\nType 'schedule' to go in to schedule mode,"
+			puts "type 'results' to go in to results mode, or"
 			puts "type 'exit' to leave the program"
 			puts "\nTo view more information, select a race number from above: "
 			@user_input = gets.strip.downcase

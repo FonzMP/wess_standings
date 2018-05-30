@@ -35,6 +35,7 @@ class WessStandings::Results
 	end
 
 	def display_list
+		puts "\nThe current results list include"
 		puts " "
 		results_list.each_with_index do |item, i|
 			puts "#{i + 1}. " + item.name

@@ -20,6 +20,7 @@ class WessStandings::CLI
 	end
 
 	def display_list
+		puts "\nThe current race schedule is"
 		puts " "
 		race_list.each_with_index do |item, i|
 			puts "#{i + 1}. " + item.name + " - " + item.location + " - " + item.date
