@@ -89,7 +89,11 @@ class WessStandings::Results
 		doc = Nokogiri::HTML(open(profile_url))
 		doc.css('.event-results-table').css('tr').each do |row|
 			rider = WessStandings::Rider.new
-			rider.last_name = row.css('td')[0].text.strip
+			if row.css('td')[0].text.include?(" ")
+				rider.last_name = row.css('td')[0].text.strip.split(" ").map {|name| name.capitalize}.join(" ")
+			else
+				rider.last_name = row.css('td')[0].text.strip
+			end
 			rider.first_name = row.css('td')[1].text.strip
 			rider.manufacturer = row.css('td')[3].text.strip
 			rider.points = row.css('td')[4].text.strip
