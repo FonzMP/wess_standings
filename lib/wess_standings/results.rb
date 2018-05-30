@@ -1,5 +1,8 @@
 class WessStandings::Results
 
+	include Memorable::InstanceMethods
+
+
 	@@all = []
 
 	def call
@@ -19,12 +22,6 @@ class WessStandings::Results
 	def results_list
 		@race_list = WessStandings::Results.all
 		@race_list
-	end
-
-	def full_rotation
-		display_list
-		user_input
-		selection
 	end
 
 	def full_rotation_after_load
@@ -49,21 +46,6 @@ class WessStandings::Results
 		end
 	end
 
-	def user_input
-		puts "\nType 'list' to see the schedule for 2018,"
-		puts "type 'results' to go in to the results mode, or"
-		# puts "type 'full' to see the full results list,"
-		# puts "type 'short' to see the short results list (default), "
-		puts "type 'exit' to leave the program"
-		puts "\nPlease select a race number from above: "
-		@user_input = gets.strip.downcase
-	end
-
-
-
-
-	##### you are here, working on selection
-
 	def selection
 		if @user_input.to_i <= @race_list.length && @user_input.to_i > 0
 			race = @race_list[@user_input.to_i - 1]
@@ -85,8 +67,7 @@ class WessStandings::Results
 			full_rotation_after_load
 		else
 			puts "That's not a valid choice!"
-			user_input
-			selection
+			full_rotation_after_load
 		end
 	end
 
@@ -97,7 +78,6 @@ class WessStandings::Results
 			race.name = f.text.strip
 			race.results = f['href']
 			@@all << race
-			# puts "#{i + 1}. " + f.text.strip
 		end
 	end
 
