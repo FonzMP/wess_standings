@@ -12,7 +12,8 @@ module Memorable
 			puts "\nType 'schedule' to go in to schedule mode,"
 			puts "type 'results' to go in to results mode, or"
 			puts "type 'exit' to leave the program"
-			puts "\nTo view more information, select a race number from above: "
+			puts "\nTo view more information, select a race number from the list,"
+			puts "or select a mode from the list above:"
 			@user_input = gets.strip.downcase
 		end
 
