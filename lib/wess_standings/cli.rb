@@ -3,6 +3,7 @@ class WessStandings::CLI
 	def call
 		greeting
 		generate_list
+		WessStandings::Results.new.generate_list
 		full_rotation
 	end
 
@@ -49,7 +50,6 @@ class WessStandings::CLI
 	def selection
 		if @user_input.to_i <= @race_list.length && @user_input.to_i > 0
 			race = @race_list[@user_input.to_i - 1]
-			puts "The #{race.name} is set to be held in #{race.location} on #{race.date}."
 			WessStandings::Schedule.about("#{race.url}")
 			full_rotation
 		elsif @user_input == "exit"

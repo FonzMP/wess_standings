@@ -4,12 +4,6 @@ class WessStandings::Results
 
 	def call
 		greeting
-		generate_list
-		full_rotation
-	end
-
-	def recall
-		greeting
 		full_rotation_after_load
 	end
 
@@ -82,7 +76,7 @@ class WessStandings::Results
 		elsif @user_input == "list"
 			WessStandings::CLI.new.recall
 		elsif @user_input == "results"
-			WessStandings::Results.new.recall
+			WessStandings::Results.new.call
 		elsif @user_input == "full"
 			WessStandings::Results.display_race_results_all
 			full_rotation_after_load
